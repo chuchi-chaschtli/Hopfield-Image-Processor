@@ -12,6 +12,10 @@ class HopfieldModel:
         self.finals = []
 
     def display(self):
+        """
+        Displays the weight matrices as distinct plots using a purple/white
+        color scheme
+        """
         for count, w in enumerate(self.weights):
             plt.imshow(w,
                        cmap=plt.cm.BuPu_r,
