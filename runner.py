@@ -33,7 +33,7 @@ def main():
 
     print("Beginning restoration...")
 
-    print('Type the file path of the corrupted file to resolve')
+    print('Type the file path of the unknown image to resolve')
     corrupted = convert_image(str(input()))
 
     plt.subplot(211)
