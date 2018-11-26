@@ -39,19 +39,16 @@ class HopfieldModel:
 
         self.finals = self.finals - self.weights[0]
 
-
     def add_weight_pattern(self, pattern, pattern_id, debug = False):
         weight = np.zeros((pattern.size, pattern.size))
 
-        pattern[pattern > 0] = 1
-        pattern[pattern <= 0] = -1
         pattern = pattern.flatten()
 
         # W(x, y) = P(x) * P(y)
         for x in range(pattern.size):
             for y in range(pattern.size):
-                if debug:
-                    print(f'Pattern #{pattern_id} is processing cell {(x, y)}')
+                # if debug:
+                #     print(f'Pattern #{pattern_id} is processing cell {(x, y)}')
                 weight[x][y] = pattern[x] * pattern[y]
 
         self.weights.append(weight)
@@ -66,13 +63,7 @@ class HopfieldModel:
             for j in range(len(lst)):
                 interactions += self.finals[i][j] * lst[j]
 
-            result[i] = 1 if interactions > 0 else -1
+            result[i] = interactions
 
-        return result.reshape(original)
-
-    def normalize(self, weights):
-        """ Normalizes weights """
-        weights[weights > 0]  = 1
-        weights[weights <= 0] = -1
-
-        return weights
+        result = result.reshape(original)
+        return result
