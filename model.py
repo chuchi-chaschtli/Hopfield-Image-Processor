@@ -47,21 +47,21 @@ class HopfieldModel:
         # W(x, y) = P(x) * P(y)
         for x in range(pattern.size):
             for y in range(pattern.size):
-                # if debug:
-                #     print(f'Pattern #{pattern_id} is processing cell {(x, y)}')
+                if debug:
+                    print(f'Pattern #{pattern_id} is processing cell {(x, y)}')
                 weight[x][y] = pattern[x] * pattern[y]
 
         self.weights.append(weight)
 
-    def update(self, lst):
-        original = lst.shape
-        lst = lst.flatten()
-        result = np.zeros(lst.shape)
+    def update(self, pattern):
+        original = pattern.shape
+        pattern = pattern.flatten()
+        result = np.zeros(pattern.shape)
 
-        for i in range(len(lst)):
+        for i in range(len(pattern)):
             interactions = 0
-            for j in range(len(lst)):
-                interactions += self.finals[i][j] * lst[j]
+            for j in range(len(pattern)):
+                interactions += self.finals[i][j] * pattern[j]
 
             result[i] = interactions
 
