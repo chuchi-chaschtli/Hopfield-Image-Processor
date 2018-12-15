@@ -1,4 +1,4 @@
-Hopfield Image Processor + Classifer
+Hopfield Image Processor + Classifier
 ---
 
 Design
