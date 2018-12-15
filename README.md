@@ -13,7 +13,9 @@ Usage
 ----
 Ensure PIL, matplotlib, and numpy are installed in your Python environment.
 
-Example: `./python3.7 runner.py colored/cafe_terrace_night.jpg colored/last_supper.jpg colored/mona_lisa.jpg -v`
+Example: `python3.7 runner.py colored/cafe_terrace_night.jpg colored/last_supper.jpg colored/mona_lisa.jpg -v`
 
 * `-v` may be optionally supplied for verbose output
 * Training files are specified as a list of files in the terminal window.
+
+After training is complete, a prompt on the terminal will appear to specify the test image, intended to be a noisy or corrupt image to classify or resolve. Simply type the path of the file to be resolved, i.e `colored/corrupted_cafe_terrace_night.jpg`.
