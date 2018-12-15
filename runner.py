@@ -50,7 +50,7 @@ def main():
 
     # Allows the user to specify the image they want to resolve
     print('Type the file path of the unknown image to resolve')
-    corrupted = convert_image(str(input()))
+    corrupted = convert_image(str(input()).strip())
 
     # Displays the unknown image on top of what the model believes it should
     # look like
